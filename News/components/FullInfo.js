@@ -1,11 +1,8 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { StyleSheet, View, Text, Image, Button } from 'react-native';
 import {gStyle} from '../styles/style';
 
 export default function FullInfo({route}) {
-  //const loadScene = () => {
-  //  navigation.goBack();
-  //}
 
   return (
     <View style={gStyle.main}>

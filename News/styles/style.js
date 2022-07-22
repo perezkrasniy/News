@@ -5,7 +5,7 @@ export const gStyle = StyleSheet.create({
         flex: 1,
         padding: 20,
         paddingTop: 60,
-        backgroundColor: 'silver'
+        backgroundColor: 'white'
     },
     title: {
         fontSize: 25,

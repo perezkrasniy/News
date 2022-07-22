@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleSheet, View, Buttom, TextInput } from 'react-native';
+import { StyleSheet, View, Button, TextInput } from 'react-native';
 import {Formik} from 'formik';
 
-export default function Form() {
+export default function Form({addArticle}) {
   
   return (
     <View>
@@ -34,7 +34,7 @@ export default function Form() {
                         value={props.values.img} 
                         placeholder= 'Add image' 
                         onChangeText={props.handleChange('img')}/>
-                    <Buttom title='Add news' onPress={props.handleSubmit}/>
+                    <Button title='Add news' onPress={props.handleSubmit}/>
                 </View>
             )}
         </Formik>
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     marginTop: 15,
     padding: 10,
-    borderColor: 'silver',
+    borderColor: 'black',
     borderRadius: 5
   }
 });

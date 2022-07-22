@@ -2,11 +2,9 @@ import React, {useState} from 'react';
 import { StyleSheet, View, Text, Modal, TouchableOpacity, FlatList, Image } from 'react-native';
 import {gStyle} from '../styles/style';
 import { Ionicons } from '@expo/vector-icons';
+import Form from './Form';
 
 export default function Main({navigation}) {
-  const loadScene = () => {
-    navigation.navigate('Contacts');
-  }
 
   const [news, setNews] = useState([
     {name: 'Google', anons: 'Goggle!!!', full: 'google is cool', key: 1, img: 'https://techcrunch.com/wp-content/uploads/2020/10/Google-Workspace-Icons-bad.png'},
@@ -16,15 +14,24 @@ export default function Main({navigation}) {
 
   const [modalWindow, setModalWindow] = useState(false);
 
+  const addArticle = (article) => {
+    setNews((list) =>{
+      article.key = Math.random().toString();
+      return [
+        article,
+        ...list
+      ]
+    });
+    setModalWindow(false);
+  }
 
   return (
     <View style={gStyle.main}>
       <Modal visible={modalWindow}>
       <View style={gStyle.main}>
-        <Ionicons name="close-circle" size={34} color="red" style={styles.IconAdd} onPress={() => setModalWindow(false)}/>
-        <Text style = {styles.title}>
-          Add form
-        </Text>
+        <Ionicons name="close" size={34} color="red" style={styles.IconAdd} onPress={() => setModalWindow(false)}/>
+        <Text style = {styles.title}>Add form</Text>
+        <Form addArticle={addArticle}/>
       </View>
       </Modal>
       <Ionicons name="add-circle" size={34} color="green" style={styles.IconAdd} onPress={() => setModalWindow(true)}/>
