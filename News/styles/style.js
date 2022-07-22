@@ -8,7 +8,7 @@ export const gStyle = StyleSheet.create({
         backgroundColor: 'silver'
     },
     title: {
-        fontSize: 20,
+        fontSize: 25,
         color: '#333',
         fontFamily: 'mt-bold',
         textAlign: 'center'
